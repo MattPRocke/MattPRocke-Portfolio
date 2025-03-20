@@ -1,0 +1,14 @@
+ {% extends 'base.html' %}
+{% block title %}Edit Project{% endblock %}
+{% block content %}
+    <h1>Edit Project</h1>
+    <form method="post">
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" value="{{ project.title }}" required><br><br>
+        <label for="description">Description:</label><br>
+        <textarea name="description" required>{{ project.description }}</textarea><br><br>
+        <label for="url">URL:</label><br>
+        <input type="url" name="url" value="{{ project.url }}" required><br><br>
+        <button type="submit">Save Changes</button>
+    </form>
+{% endblock %}

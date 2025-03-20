@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}About Me{% endblock %}
+{% block content %}
+    <div class="about-container">
+        <h1>About Me</h1>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Picture" class="profile-image">
+            <div class="profile-details">
+                <h2>Your Name</h2>
+                <p>Software Developer</p>
+                <p>Location: Your City, State</p>
+                <p>Email: your.email@example.com</p>
+                <p>LinkedIn: <a href="your_linkedin_profile_url" target="_blank">Your LinkedIn Profile</a></p>
+                <p>GitHub: <a href="your_github_profile_url" target="_blank">Your GitHub Profile</a></p>
+            </div>
+        </div>
+        <div class="bio">
+            <h2>Biography</h2>
+            <p>Write a brief biography about yourself here. You can include information about your background, skills, interests, and experience. For example:</p>
+            <p>I am a passionate software developer with a background in computer science. I enjoy building web applications and exploring new technologies. My expertise includes Python, Flask, and database management. I am always looking for new challenges and opportunities to learn and grow.</p>
+        </div>
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Feel free to reach out to me with any questions or inquiries. You can contact me via email or through my LinkedIn profile.</p>
+        </div>
+    </div>
+{% endblock %} 
