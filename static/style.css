@@ -225,7 +225,12 @@ nav a:hover {
 }
 
 .btn-danger {
-    background-color: #e63946;
+   /* background-color: #e63946;  */
+    color: white;
+}
+
+.btn-dangerthumb {
+    background-color: #e63946; 
     color: white;
 }
 

@@ -26,7 +26,7 @@
             {% if project.thumbnail %}
                 <img id="thumbnailPreview" src="{{ url_for('static', filename='uploads/' + project.thumbnail) }}" 
                      class="thumbnail-preview">
-                <button type="button" id="deleteThumbnail" class="btn btn-danger">🗑️ Delete Thumbnail</button>
+                <button type="button" id="deleteThumbnail" class="btn btn-dangerthumb">🗑️ Delete Thumbnail</button>
             {% else %}
                 <img id="thumbnailPreview" class="thumbnail-preview" style="display: none;">
             {% endif %}
