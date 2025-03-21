@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
@@ -11,11 +12,12 @@
             <a href="{{ url_for('projects') }}">Projects</a>
             <a href="{{ url_for('about') }}">About</a>
             {% if current_user.is_authenticated %}
-                <span class="username">Logged in as: {{ current_user.id }}</span>
-                <a href="{{ url_for('logout') }}">Logout</a>
-            {% else %}
-                <a href="{{ url_for('login') }}">Login</a>
-            {% endif %}
+    <span class="username">Logged in as: {{ current_user.username }}</span>
+    <a href="{{ url_for('logout') }}">Logout</a>
+{% else %}
+    <a href="{{ url_for('login') }}">Login</a>
+{% endif %}
+
         </nav>
     </header>
     <main class="content">

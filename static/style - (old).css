@@ -1,0 +1,184 @@
+ body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+.content {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #eee;
+    border-top: 1px solid #ddd;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #e9e9e9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+}
+
+.error-container {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.username {
+    color: white;
+    margin-left: 10px;
+}
+
+/* ... (previous styles) ... */
+
+
+/* ... (previous styles) ... */
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.project-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(33.33% - 20px); /* Adjust width as needed */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start; /* Align controls to the start */
+    gap: 5px; /* Add some space between buttons */
+}
+
+.admin-controls a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.admin-controls a:hover {
+    background-color: #f0f0f0;
+}
+
+.admin-controls {
+    margin-top: 10px;
+}
+
+.admin-controls a {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-warning { background-color: #f4c542; color: black; }
+.btn-info { background-color: #17a2b8; color: white; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-primary { background-color: #007bff; color: white; }
+
+.drop-zone {
+    border: 2px dashed #007bff;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.drop-zone .drop-text {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.drop-zone .browse {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.drop-zone.drag-over {
+    background-color: #e3f2fd;
+    border-color: #0056b3;
+}
+
+.thumbnail-preview {
+    max-width: 200px;
+    margin-top: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary { background-color: #007bff; color: white; }
+.btn-danger { background-color: #dc3545; color: white; }
+.btn-secondary { background-color: #6c757d; color: white; }
+
+.btn:hover {
+    opacity: 0.8;
+}
+

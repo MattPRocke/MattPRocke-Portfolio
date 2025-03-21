@@ -1,14 +1,83 @@
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 {% block title %}Add Project{% endblock %}
 {% block content %}
     <h1>Add Project</h1>
     <form method="post">
         <label for="title">Title:</label><br>
         <input type="text" name="title" required><br><br>
+
         <label for="description">Description:</label><br>
         <textarea name="description" required></textarea><br><br>
+
         <label for="url">URL:</label><br>
-        <input type="url" name="url" required><br><br>
-        <button type="submit">Add Project</button>
+        <input type="url" name="url"><br><br>
+
+        <label>Project Thumbnail:</label>
+        <div id="drop-area" class="drop-zone">
+            <div class="drop-text">
+                <p>📤 Drag & Drop an image here or <span class="browse">click to upload</span></p>
+            </div>
+            <input type="file" id="fileInput" hidden>
+        </div>
+        <input type="hidden" name="thumbnail" id="thumbnailInput">
+
+        <img id="thumbnailPreview" class="thumbnail-preview" style="display: none;"><br>
+
+        <button type="submit" class="btn btn-primary">➕ Add Project</button>
+        <button type="button" class="btn btn-secondary" onclick="window.location.href='{{ url_for('projects') }}'">❌ Discard</button>
     </form>
+
+    <script>
+    const dropArea = document.getElementById("drop-area");
+    const fileInput = document.getElementById("fileInput");
+    const thumbnailPreview = document.getElementById("thumbnailPreview");
+    const thumbnailInput = document.getElementById("thumbnailInput");
+
+    // Click to upload
+    dropArea.addEventListener("click", () => fileInput.click());
+
+    // Drag & drop functionality
+    dropArea.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        dropArea.classList.add("drag-over");
+    });
+
+    dropArea.addEventListener("dragleave", () => {
+        dropArea.classList.remove("drag-over");
+    });
+
+    dropArea.addEventListener("drop", (e) => {
+        e.preventDefault();
+        dropArea.classList.remove("drag-over");
+
+        let file = e.dataTransfer.files[0];
+        if (!file) return;
+        uploadFile(file);
+    });
+
+    // Handle file selection
+    fileInput.addEventListener("change", function(event) {
+        let file = event.target.files[0];
+        if (!file) return;
+        uploadFile(file);
+    });
+
+    function uploadFile(file) {
+        let formData = new FormData();
+        formData.append('file', file);
+
+        fetch('/upload_thumbnail', { method: 'POST', body: formData })
+        .then(response => response.json())
+        .then(data => {
+            if (data.filename) {
+                thumbnailInput.value = data.filename;
+                thumbnailPreview.src = "/static/uploads/" + data.filename;
+                thumbnailPreview.style.display = "block";
+            } else {
+                alert("Error uploading image.");
+            }
+        });
+    }
+    </script>
+
 {% endblock %}
